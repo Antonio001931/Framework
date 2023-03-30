@@ -1,6 +1,6 @@
-package model;
+package etu1931.framework;
 
-import annotation.Url;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;

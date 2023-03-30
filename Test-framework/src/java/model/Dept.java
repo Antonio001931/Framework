@@ -4,7 +4,8 @@
  */
 package model;
 
-import annotation.Url;
+import etu1931.framework.ModelView;
+import etu1931.framework.Url;
 
 /**
  *
@@ -17,6 +18,9 @@ public class Dept {
     public Dept(int id, String nom) {
         this.id = id;
         this.nom = nom;
+    }
+    public Dept (){
+        
     }
     
     
@@ -38,9 +42,13 @@ public class Dept {
     }
     
   @Url(name = "dept-all")
-    public Emp[] findall()
+    public ModelView findall()
     {
-        return null;
+        
+        
+        ModelView mv= new ModelView();
+        mv.setViewname("ListDept.jsp");
+       return mv;
     }
     
     @Url(name="dept-add")

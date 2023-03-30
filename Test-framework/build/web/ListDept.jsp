@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Inserer
-    Created on : 7 mars 2023, 11:42:19
+    Document   : ListDept
+    Created on : 30 mars 2023, 17:36:39
     Author     : antonio
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Success</h1>
+        <h1>Hello World!</h1>
     </body>
 </html>
