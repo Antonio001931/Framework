@@ -4,7 +4,7 @@
  */
 package model;
 
-import annotation.Url;
+import etu1931.framework.Url;
 
 /**
  *
