@@ -1,18 +1,11 @@
 <%-- 
-<<<<<<< Updated upstream
-    Document   : ListDept
-    Created on : 30 mars 2023, 17:36:39
-    Author     : antonio
---%>
-=======
     Document   : ListEmp
     Created on : 5 avr. 2023, 08:55:26
     Author     : antonio
 --%>
-<%@page import="model.Dept"%>
+<%@page import="model.Emp"%>
 <%@page import="java.util.Vector"%>
-<% Vector<Dept> vect = (Vector<Dept>) (request.getAttribute("list"));%>
->>>>>>> Stashed changes
+<% Vector<Emp> vect = (Vector<Emp>) (request.getAttribute("emp"));%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -22,10 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-<<<<<<< Updated upstream
-        <h1>Hello World!</h1>
-=======
-       <h1> Liste Dept</h1>
+       <h1> Liste Emp</h1>
         <table border="1">
             <tr>
                 <th>Id</th>
@@ -42,6 +32,5 @@
             
             <% }%>
         </table>
->>>>>>> Stashed changes
     </body>
 </html>
