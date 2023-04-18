@@ -4,7 +4,13 @@
  */
 package model;
 
+<<<<<<< Updated upstream:Test-framework/src/java/model/Emp.java
 import etu1931.framework.Url;
+=======
+import etu1931.framework.ModelView;
+import etu1931.framework.Url;
+import java.util.Vector;
+>>>>>>> Stashed changes:Framework/src/java/model/Emp.java
 
 /**
  *
@@ -13,6 +19,15 @@ import etu1931.framework.Url;
 public class Emp {
     int id;
     String nom;
+    
+    public Emp()
+    {}
+
+    public Emp(int id, String nom) {
+        this.id = id;
+        this.nom = nom;
+    }
+            
 
     public int getId() {
         return id;
@@ -31,9 +46,21 @@ public class Emp {
     }
     
   @Url(name = "emp-all")
-    public Emp[] findall()
+    public ModelView findall()
     {
-        return null;
+        
+        Emp e1=new Emp(1,"Antonio");
+         Emp e2=new Emp(2,"Rindra");
+          Emp e3=new Emp(3,"Imanoela");
+        Vector<Emp> v=new Vector();
+        v.add(e1);
+         v.add(e2);
+          v.add(e3);
+        
+        ModelView mv= new ModelView();
+        mv.addItem("emp", v);
+        mv.setUrl("ListEmp.jsp");
+       return mv;
     }
     
     @Url(name="emp-add")

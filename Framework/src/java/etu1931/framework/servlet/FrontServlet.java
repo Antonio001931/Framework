@@ -26,6 +26,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 
 
@@ -89,7 +93,11 @@ public class FrontServlet extends HttpServlet {
 
         }
         String url = request.getRequestURI();
+<<<<<<< Updated upstream
         url = url.split("/")[2];
+=======
+        url = url.split("/")[url.split("/").length-1];
+>>>>>>> Stashed changes
         
         try {  
           if (mappinUrls.containsKey(url)) {
@@ -99,6 +107,7 @@ public class FrontServlet extends HttpServlet {
               
               //Object obj = cl.getMethod(mapping.getMethod()).invoke(cl.getConstructor().newInstance());
                 Class<?> classe = Class.forName(mapping.getClassName());
+<<<<<<< Updated upstream
                               out.print("3");
                 Object instance = classe.getDeclaredConstructor().newInstance();
               out.print("4");
@@ -117,6 +126,31 @@ public class FrontServlet extends HttpServlet {
                     out.print("7");
                 } else {
                     out.print("");
+=======
+                             
+                Object instance = classe.getDeclaredConstructor().newInstance();
+             
+              // Utilisation d'une méthode sur l'objet de la classe créé
+               Method maMethode = classe.getMethod(mapping.getMethod());
+             
+              
+              Object obj =   maMethode.invoke(instance);
+                if (obj.getClass() == ModelView.class) {
+                   
+                    ModelView mv = (ModelView) obj;
+                             for (Map.Entry<String,Object> entry : mv.getData().entrySet()) {
+                                 request.setAttribute(entry.getKey(),entry.getValue());
+        }
+                    
+                    
+                  
+                    RequestDispatcher dispat = request.getRequestDispatcher(mv.getUrl());
+                   
+                    dispat.forward(request,response);
+                   
+                } else {
+                   
+>>>>>>> Stashed changes
                     throw new Exception("erreur");
                 }
             }  
@@ -127,7 +161,7 @@ public class FrontServlet extends HttpServlet {
        
          
     }
-
+      
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
