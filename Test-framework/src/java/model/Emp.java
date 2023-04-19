@@ -4,13 +4,9 @@
  */
 package model;
 
-<<<<<<< Updated upstream:Test-framework/src/java/model/Emp.java
-import etu1931.framework.Url;
-=======
 import etu1931.framework.ModelView;
 import etu1931.framework.Url;
 import java.util.Vector;
->>>>>>> Stashed changes:Framework/src/java/model/Emp.java
 
 /**
  *

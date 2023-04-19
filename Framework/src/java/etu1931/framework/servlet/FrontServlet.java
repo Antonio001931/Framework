@@ -26,10 +26,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 
 
 
@@ -93,11 +90,7 @@ public class FrontServlet extends HttpServlet {
 
         }
         String url = request.getRequestURI();
-<<<<<<< Updated upstream
-        url = url.split("/")[2];
-=======
         url = url.split("/")[url.split("/").length-1];
->>>>>>> Stashed changes
         
         try {  
           if (mappinUrls.containsKey(url)) {
@@ -107,26 +100,6 @@ public class FrontServlet extends HttpServlet {
               
               //Object obj = cl.getMethod(mapping.getMethod()).invoke(cl.getConstructor().newInstance());
                 Class<?> classe = Class.forName(mapping.getClassName());
-<<<<<<< Updated upstream
-                              out.print("3");
-                Object instance = classe.getDeclaredConstructor().newInstance();
-              out.print("4");
-              // Utilisation d'une méthode sur l'objet de la classe créé
-               Method maMethode = classe.getMethod(mapping.getMethod());
-             
-
-              Object obj =   maMethode.invoke(instance);
-                if (obj.getClass() == ModelView.class) {
-                    out.print("4");
-                    ModelView mv = (ModelView) obj;
-                    out.print("5");
-                    RequestDispatcher dispat = request.getRequestDispatcher(mv.getViewname());
-                    out.print("6");
-                    dispat.forward(request,response);
-                    out.print("7");
-                } else {
-                    out.print("");
-=======
                              
                 Object instance = classe.getDeclaredConstructor().newInstance();
              
@@ -150,7 +123,6 @@ public class FrontServlet extends HttpServlet {
                    
                 } else {
                    
->>>>>>> Stashed changes
                     throw new Exception("erreur");
                 }
             }  
