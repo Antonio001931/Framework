@@ -6,6 +6,7 @@ package model;
 
 import etu1931.framework.ModelView;
 import etu1931.framework.Url;
+import java.util.Date;
 import java.util.Vector;
 
 /**
@@ -15,6 +16,7 @@ import java.util.Vector;
 public class Dept {
      int id;
     String nom;
+ 
 
     
     public Dept (){
@@ -43,7 +45,7 @@ public class Dept {
     public void setNom(String nom) {
         this.nom = nom;
     }
-    
+   
   @Url(name = "dept-all")
     public ModelView findall()
     {
@@ -68,6 +70,20 @@ public class Dept {
     {
         
     }
+    /*@Url(name = "dept-det")
+    public ModelView select(int idp)
+    {
+     
+       this.id=idp;
+      
+         Vector<Dept> lemp=new Vector();
+         lemp.add(this);
+        
+        ModelView mv= new ModelView();
+        mv.addItem("dept",lemp);
+        mv.setUrl("ListDept.jsp");
+        return mv;       
+    }*/
     
 }
     

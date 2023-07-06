@@ -6,6 +6,7 @@ package model;
 
 import etu1931.framework.ModelView;
 import etu1931.framework.Url;
+import java.util.Date;
 import java.util.Vector;
 
 /**
@@ -15,15 +16,19 @@ import java.util.Vector;
 public class Emp {
     int id;
     String nom;
+    Date date;
     
     public Emp()
     {}
 
-    public Emp(int id, String nom) {
+    public Emp(int id, String nom,Date date) {
         this.id = id;
         this.nom = nom;
+        this.date=date;
+        
     }
-            
+
+          
 
     public int getId() {
         return id;
@@ -40,20 +45,26 @@ public class Emp {
     public void setNom(String nom) {
         this.nom = nom;
     }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
     
   @Url(name = "emp-all")
     public ModelView findall()
     {
-        
-        Emp e1=new Emp(1,"Antonio");
-         Emp e2=new Emp(2,"Rindra");
-          Emp e3=new Emp(3,"Imanoela");
+        Date d=new Date("2020-02-10");
+       
+        Emp e = new Emp(100, "rindra", d);
+        Emp e1= new Emp(50, "le", d);
         Vector<Emp> v=new Vector();
+        v.add(e);
         v.add(e1);
-         v.add(e2);
-          v.add(e3);
-        
-        ModelView mv= new ModelView();
+         ModelView mv= new ModelView();
         mv.addItem("emp", v);
         mv.setUrl("ListEmp.jsp");
        return mv;
@@ -64,5 +75,37 @@ public class Emp {
     {
         
     }
+  @Url(name= "save-emp")
+    public ModelView save() {
+      
+         Emp emp = new Emp();
+         Vector<Emp> lemp=new Vector();
+         lemp.add(this);
+        
+        ModelView mv= new ModelView();
+        mv.addItem("empl",lemp);
+        mv.setUrl("ListEmp.jsp");
+        return mv;       
+    }
     
+    
+     
+     
+     
+  /*@Url(name = "emp-det")
+    public ModelView select(int idp)
+    {
+     
+       //this.id=idp;
+       Emp emp = new Emp();
+         Vector<Emp> lemp=new Vector();
+         lemp.add(this);
+        p emp = new Emp();
+         Vector<Emp> lemp=new Vector();
+         
+        ModelView mv= new ModelView();
+        mv.addItem("empl",lemp);
+        mv.setUrl("ListEmp.jsp");
+        return mv;       
+    }*/
 }

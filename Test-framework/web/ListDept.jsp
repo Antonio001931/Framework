@@ -20,6 +20,7 @@
             <tr>
                 <th>Id</th>
                  <th>Nom</th>
+
                 
             </tr>
         <% for (int i = 0; i < vect.size(); i++) { %>
@@ -27,6 +28,7 @@
                 
             <td><% out.print(vect.elementAt(i).getId());%></td>
             <td><% out.print(vect.elementAt(i).getNom());%></td>
+          
         </tr>
                  
             
