@@ -12,6 +12,7 @@ import etu1931.framework.Parametre;
 import etu1931.framework.UploadFile;
 import etu1931.framework.Scope;
 import etu1931.framework.Authentification;
+import etu1931.framework.ApiRest;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -282,7 +283,10 @@ public class FrontServlet extends HttpServlet {
                         RequestDispatcher dispat = request.getRequestDispatcher(model.getView());
                         dispat.forward(request, response);
                     }
-
+                }
+                else if(m.isAnnotationPresent(ApiRest.class)){
+                    response.setContentType("application/json");
+                        out.print(new com.google.gson.Gson().toJson(mv));
                 }
             }
         } catch (Exception e) {
